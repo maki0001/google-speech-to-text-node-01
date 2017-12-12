@@ -13,11 +13,14 @@
 //   console.log('stop');
 // }
 
+var wbScktUrl = location.protocol + '//' + location.host
+console.log(wbScktUrl);
 //画面表示時に実行される
 // staticブロック的な動き？
 var socket, emit;
 (function(){
-    socket = io.connect("http://localhost:3000");
+    // socket = io.connect("http://localhost:3000");
+    socket = io.connect(wbScktUrl);
     emit = function (name, data){
         // json → 文字列に変換して送信する関数
         socket.emit(name, JSON.stringify(data));
