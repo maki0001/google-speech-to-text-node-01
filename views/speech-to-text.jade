@@ -1,0 +1,12 @@
+extends layout
+
+block content
+  script(src='/javascripts/speech-to-text.js')
+  div
+    h1= title
+    div(id='message') Welcome to #{title}
+    br
+    button(id='start') 変換開始
+    button(id='stop') 変換終了
+  div
+    ul(id='messageList')
